@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Reservation System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Online Bus Reservation</h1>
+        
+        <div class="reservation-form">
+            <h2>Book Your Ticket</h2>
+            <form id="bookingForm" action="book_ticket.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name (Passenger)</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobile_no">Mobile No</label>
+                    <input type="text" id="mobile_no" name="mobile_no">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email ID</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="from">From</label>
+                        <select id="from" name="from" required>
+                            <option value="">Select City</option>
+                            <option value="chandigarh">Chandigarh</option>
+                            <option value="bihar">Bihar</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="Jammu kashmir">Jammu kashmir</option>
+                            <option value="kolkata">Kolkata</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="to">To</label>
+                        <select id="to" name="to" required>
+                            <option value="">Select City</option>
+                            <option value="chandigarh">Chandigarh</option>
+                            <option value="bihar">Bihar</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="jammu kashmir">Jammu kashmir</option>
+                            <option value="kolkata">Kolkata</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Travel Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time">Travel Time</label>
+                        <select id="time" name="time" required>
+                            <option value="08:00 AM">08:00 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="01:00 PM">01:00 PM</option>
+                            <option value="04:30 PM">04:30 PM</option>
+                            <option value="08:00 PM">08:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">Book Ticket</button>
+            </form>
+        </div>
+        
+        <div class="reservation-details" id="reservationDetails">
+            <h2>Your Reservation Details</h2>
+            <div class="details-card">
+                <p><strong>Name:</strong> <span id="displayName">-</span></p>
+                <p><strong>Email:</strong> <span id="displayEmail">-</span></p>
+                <p><strong>From:</strong> <span id="displayFrom">-</span></p>
+                <p><strong>To:</strong> <span id="displayTo">-</span></p>
+                <p><strong>Date:</strong> <span id="displayDate">-</span></p>
+                <p><strong>Time:</strong> <span id="displayTime">-</span></p>
+                <p class="confirmation-message">Your reservation will be confirmed shortly.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
